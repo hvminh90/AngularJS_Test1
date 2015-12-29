@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="LoadPageCtr">
+<head>
+    <title ng-bind="models.helloAngular"></title>
+    <style type="text/css">
+        .confirmWidth {
+            width: 500px;
+            margin: 0 auto;
+        }
+        .popup-xoa
+        {
+            top:40% !important;
+            left:30% !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{models.helloAngular}}</h1>
+   
+    <!--Menu ở đây-->
+    <ul class="nav nav-pills">
+        <li role="presentation" id="home" ><a href="/#/">Home</a></li>
+        <li role="presentation" id="about"><a href="/#/home">About</a></li>
+        <li role="presentation" id="nhanvien"><a href="/#/nhanVien">Nhân viên</a></li>
+        
+    </ul>
+    <br />
+
+    <!--Add view ở đây-->
+    <div ng-view>
+        
+    </div>
+
+
+
+    <!--Script js ở đây-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/myApp")
+    <script>
+        
+        $(document).ready(function () {
+            //$('.modal-dialog').attr({});
+            
+        });
+       
+    </script>
+</body>
+</html>
