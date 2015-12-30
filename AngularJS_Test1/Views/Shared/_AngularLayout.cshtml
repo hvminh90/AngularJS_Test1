@@ -1,13 +1,41 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <base href="@System.Configuration.ConfigurationManager.AppSettings["BaseUrlPath"].ToString()" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/myApp")
+    <style type="text/css">
+        .confirmWidth {
+            width: 500px;
+            margin: 0 auto;
+        }
 
-    <link href="~/Content/css.css" rel="stylesheet" />
+        .modal-dialog {
+            top: 40% !important;
+            left: 30% !important;
+        }
+
+        .modal-popup-xoa {
+            top: 40% !important;
+            left: 30% !important;
+        }
+
+        #background-color {
+            background-color: #f1f1f1;
+        }
+    </style>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,6 +67,5 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

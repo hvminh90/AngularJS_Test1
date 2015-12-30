@@ -5,6 +5,12 @@
     $scope.objNhanVien;
     getNhanViens();
 
+    self.alertEditSuccess = function () {
+        $(".alert-message").removeClass('hide');
+        $(".alert-message").alert();
+        window.setTimeout(function() { $(".alert-message").addClass('hide').fadeOut(); }, 1000);
+    }
+
     function getNhanViens() {
         NhanVienFactory.getNhanViens()
         .success(function (data) {
@@ -29,6 +35,7 @@
             $scope.SoDienThoai = '';
             $scope.ID = '';
             getNhanViens();
+            alertEditSuccess();
         })
         .error(function (error) {
             $scope.status = 'Unable to update customer: ' + error.message;

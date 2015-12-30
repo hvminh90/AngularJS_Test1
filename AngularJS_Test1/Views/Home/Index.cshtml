@@ -1,42 +1,61 @@
-﻿
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    Layout = null; //"~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
 <html ng-app="myApp" ng-controller="LoadPageCtr">
 <head>
-    <title ng-bind="models.helloAngular"></title>
+    <title >Home</title>
     <style type="text/css">
         .confirmWidth {
             width: 500px;
             margin: 0 auto;
         }
-        .popup-xoa
-        {
-            top:40% !important;
-            left:30% !important;
+
+        .modal-dialog {
+            top: 40% !important;
+            left: 30% !important;
+        }
+
+        .modal-popup-xoa {
+            top: 40% !important;
+            left: 30% !important;
+        }
+
+        #background-color {
+            background-color: #f1f1f1;
         }
     </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="~/Content/css.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>{{models.helloAngular}}</h1>
-   
-    <!--Menu ở đây-->
-    <ul class="nav nav-pills">
-        <li role="presentation" id="home" ><a href="/#/">Home</a></li>
-        <li role="presentation" id="about"><a href="/#/home">About</a></li>
-        <li role="presentation" id="nhanvien"><a href="/#/nhanVien">Nhân viên</a></li>
-        
-    </ul>
-    <br />
+    @*<h1>{{models.helloAngular}}</h1>*@
+    <div class="container">
+        <!--Menu ở đây-->
+        <ul class="nav nav-pills">
+            <li role="presentation" id="home"><a href="/#/">Home</a></li>
+            <li role="presentation" id="about"><a href="/#/home">About</a></li>
+            <li role="presentation" id="nhanvien"><a href="/#/nhanVien">Nhân viên</a></li>
 
-    <!--Add view ở đây-->
-    <div ng-view>
-        
+        </ul>
+        <br />
+
+        <!--Add view ở đây-->
+        <div ng-view>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success alert-dismissable alert-message hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
+                    Sửa đổi thành công !!!!
+                </div>
+            </div>
+        </div>
     </div>
-
-
 
     <!--Script js ở đây-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
@@ -48,12 +67,15 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     @Scripts.Render("~/bundles/myApp")
     <script>
-        
+
         $(document).ready(function () {
             //$('.modal-dialog').attr({});
-            
+
         });
-       
+
     </script>
+
+   
 </body>
+
 </html>

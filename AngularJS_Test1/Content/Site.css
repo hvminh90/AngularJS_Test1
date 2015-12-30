@@ -10,11 +10,11 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 /* styles for validation helpers */
 .field-validation-error {
@@ -39,4 +39,16 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+.alert-message,.alert-message-sendmail, .alert-message-delete,
+.alert-message-create, .alert-message-setRoleEmployer, .alert-message-errors,
+.alert-message-approve {
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    opacity: 0.8;
+    top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
