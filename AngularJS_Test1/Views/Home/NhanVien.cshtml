@@ -9,31 +9,55 @@
     <title>NhanVien</title>
 </head>
 <body>
-    <div ng-show="show">
-        <form name="formAdd" ng-submit="InsUpdNhanVien()">
-            <input type="hidden" class="form-control" id="ID" ng-model="ID">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Họ tên</label>
-                <input type="text" class="form-control" id="hoten" placeholder="Họ tên" ng-model="HoTen" required>
+
+    <div class="container" ng-show="show">
+        <div class="panel panel-default" style="background-color: #f1f1f1">
+            <div class="panel-body">
+                <form name="formAdd" ng-submit="InsUpdNhanVien()" class="form-horizontal">
+                    <!-- START THE FORM -->
+                    <div class="col-sm-6">
+                        <!-- FIRST COLUMN -->
+                        <div class="form-group">
+                            <label for="inputFirstname" class="col-sm-3 control-label">Họ tên</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="hoten" placeholder="Họ tên" ng-model="HoTen" required tabindex="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLastname" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="email" placeholder="Email" ng-model="Email" required tabindex="3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- SECOND COLUMN -->
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-sm-3 control-label">Địa chỉ</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="diachi" placeholder="Địa chỉ" ng-model="DiaChi" required tabindex="2">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputUsername" class="col-sm-3 control-label">Số điện thoại</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="sodienthoai" placeholder="Số điện thoại" tabindex="4" ng-model="SoDienThoai" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          
+                            <div class="col-sm-12 text-right">
+                                <button type="button" class="btn btn-default btn-lg" ng-click="cancelSave()">Cancel</button>&nbsp;&nbsp;
+                                <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form> <!-- END THE FORM -->
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="Email" ng-model="Email" required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Địa chỉ</label>
-                <input type="text" class="form-control" id="diachi" placeholder="Địa chỉ" ng-model="DiaChi" required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Số điện thoại</label>
-                <input type="text" class="form-control" id="sodienthoai" placeholder="Số điện thoại" ng-model="SoDienThoai" required>
-            </div>
-            <button type="button" class="btn btn-default" ng-click="cancelSave()">
-                Cancel
-            </button>
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+        </div><!-- END PANEL -->
     </div>
+
     <br />
     <button ng-hide="show" class="btn btn-default" type="button" style="margin-bottom:20px" ng-click="themnhanvien()">Add Nhân viên</button>
 
