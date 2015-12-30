@@ -1,4 +1,6 @@
 ﻿var NhanVienCtr = function ($scope, NhanVienFactory) {
+
+    console.log("Nhan vien Controller initialized");
     $scope.status;
     $scope.NhanViens;
     $scope.show = false;
@@ -80,7 +82,7 @@
                     $scope.status = 'Unable to delete customer: ' + error.message;
                 });
             }
-        }).find("div.modal-content").addClass("confirmWidth");
+        }).find("div.modal-dialog").addClass("modal-dialog-xoa");
 
     }
 
@@ -117,6 +119,8 @@
         })
         .error(function (error) {
             $scope.status = 'Error load nhân viên: ' + error.message;
+            //console.log('error');
+            //$location.url('/404');
         });
 
     }

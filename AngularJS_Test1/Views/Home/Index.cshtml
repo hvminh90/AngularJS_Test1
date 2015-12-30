@@ -1,81 +1,65 @@
 ﻿@{
-    Layout = null; //"~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_AngularLayout.cshtml";
 }
 
-<!DOCTYPE html>
-<html ng-app="myApp" ng-controller="LoadPageCtr">
-<head>
-    <title >Home</title>
+
+@section style
+    {
     <style type="text/css">
         .confirmWidth {
             width: 500px;
             margin: 0 auto;
         }
 
-        .modal-dialog {
+        .modal-dialog-xoa {
             top: 40% !important;
             left: 30% !important;
-        }
-
-        .modal-popup-xoa {
-            top: 40% !important;
-            left: 30% !important;
+            margin: 0 !important;
         }
 
         #background-color {
             background-color: #f1f1f1;
         }
     </style>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href="~/Content/css.css" rel="stylesheet" />
-</head>
-<body>
-    @*<h1>{{models.helloAngular}}</h1>*@
-    <div class="container">
-        <!--Menu ở đây-->
-        <ul class="nav nav-pills">
-            <li role="presentation" id="home"><a href="/#/">Home</a></li>
-            <li role="presentation" id="about"><a href="/#/home">About</a></li>
-            <li role="presentation" id="nhanvien"><a href="/#/nhanVien">Nhân viên</a></li>
+  
 
-        </ul>
-        <br />
+}
 
-        <!--Add view ở đây-->
-        <div ng-view>
 
-        </div>
+<!--Add view ở đây-->
+@*<div ng-view style="padding-top:25px">
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="alert alert-success alert-dismissable alert-message hide">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
-                    Sửa đổi thành công !!!!
-                </div>
-            </div>
+</div>*@
+
+<div id="wrapper" >
+    <div ui-view>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12" id="thong-bao">
+        <div class="alert alert-success alert-dismissable alert-message hide">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
+            Sửa đổi thành công !!!!
         </div>
     </div>
+</div>
 
-    <!--Script js ở đây-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootbox.min.js"></script>
+
+@section scripts {
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootbox.min.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        @Scripts.Render("~/bundles/myApp")*@
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    @Scripts.Render("~/bundles/myApp")
-    <script>
+    <script src="~/Scripts/bootbox.min.js"></script>
 
-        $(document).ready(function () {
-            //$('.modal-dialog').attr({});
-
-        });
-
-    </script>
-
-   
-</body>
-
-</html>
+}

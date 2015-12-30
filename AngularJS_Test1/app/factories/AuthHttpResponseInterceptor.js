@@ -8,7 +8,7 @@
         },
         responseError: function (rejection) {
             if (rejection.status === 401) {
-                $location.path('/login').search('returnUrl', $location.path());
+                $location.path('/home').search('returnUrl', $location.path());
             }
             return $q.reject(rejection);
         }

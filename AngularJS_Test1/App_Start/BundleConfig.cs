@@ -18,16 +18,18 @@ namespace AngularJS_Test1
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/bootbox.min.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/Site.css"));
+                      "~/Content/css.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/myApp")
-               .IncludeDirectory("~/Scripts/Controllers", "*.js")
-               .IncludeDirectory("~/Scripts/Factories", "*.js")
-               .Include("~/Scripts/app.js"));
+               .IncludeDirectory("~/app/controllers", "*.js")
+               .IncludeDirectory("~/app/factories", "*.js")
+               .Include("~/app/app.js"));
         }
     }
 }

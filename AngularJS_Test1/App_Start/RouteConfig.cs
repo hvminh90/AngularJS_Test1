@@ -24,20 +24,22 @@ namespace AngularJS_Test1
             //    url: "{controller}/{action}/{id}",
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
-            routes.MapRoute(
-                name: "about",
-                url: "Home/About",
-                defaults: new { controller = "Home", action = "About" });
 
-            routes.MapRoute(
-                name: "NhanVien",
-                url: "Home/NhanVien",
-                defaults: new { controller = "Home", action = "NhanVien" });
 
-            routes.MapRoute(
-                name: "Info",
-                url: "Home/Info",
-                defaults: new { controller = "Home", action = "Info" });
+            //routes.MapRoute(
+            //    name: "about",
+            //    url: "Home/About",
+            //    defaults: new { controller = "Home", action = "About" });
+
+            //routes.MapRoute(
+            //    name: "NhanVien",
+            //    url: "Home/NhanVien",
+            //    defaults: new { controller = "Home", action = "NhanVien" });
+
+            //routes.MapRoute(
+            //    name: "Info",
+            //    url: "Home/Info",
+            //    defaults: new { controller = "Home", action = "Info" });
 
 
            routes.MapRoute(

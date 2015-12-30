@@ -1,5 +1,9 @@
-﻿.alert-message,.alert-message-sendmail, .alert-message-delete,
-.alert-message-create, .alert-message-setRoleEmployer, .alert-message-errors,
+﻿#thong-bao .alert-message,
+.alert-message-sendmail,
+.alert-message-delete,
+.alert-message-create,
+.alert-message-setRoleEmployer, 
+.alert-message-errors,
 .alert-message-approve {
     position: fixed;
     z-index: 9999;
