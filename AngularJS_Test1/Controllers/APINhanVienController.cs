@@ -26,7 +26,7 @@ namespace AngularJS_Test1.Controllers
         [ResponseType(typeof(NhanVien))]
         public IHttpActionResult GetNhanVien(long id)
         {
-            NhanVien nhanvien = db.NhanViens.Find(5000);
+            NhanVien nhanvien = db.NhanViens.Find(id);
             if (nhanvien == null)
             {
                 return NotFound();

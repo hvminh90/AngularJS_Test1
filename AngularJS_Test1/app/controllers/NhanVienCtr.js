@@ -53,6 +53,8 @@
             SoDienThoai: $scope.SoDienThoai
         };
 
+        console.log($scope.ID);
+        console.log('Insert nhan vien.....')
         NhanVienFactory.insertNhanVien(nhanVien)
         .success(function () {
             $scope.status = 'Inserted Customer! Refreshing customer list.';
@@ -82,17 +84,22 @@
                     $scope.status = 'Unable to delete customer: ' + error.message;
                 });
             }
-        }).find("div.modal-dialog").addClass("modal-dialog-xoa");
+        });//.find("div.modal-dialog").addClass("modal-dialog-xoa");
 
     }
 
     $scope.themnhanvien = function () {
         $scope.show = true;
+        //console.log('Add nhan vien');
+        $scope.HoTen = '';
+        $scope.Email = '';
+        $scope.DiaChi = '';
+        $scope.SoDienThoai = '';
+        $scope.ID = '';
+        //$scope.show = !$scope.show;
     }
 
     $scope.cancelSave = function () {
-
-
         $scope.HoTen = '';
         $scope.Email = '';
         $scope.DiaChi = '';
@@ -103,6 +110,8 @@
 
     $scope.editNhanVien = function (id) {
         console.log(id);
+
+        console.log('Edit nhan vien');
         if ($scope.show == false) {
             $scope.show = true;
         }
@@ -127,6 +136,8 @@
 
     $scope.InsUpdNhanVien = function () {
         if ($scope.ID != '' && $scope.ID != '0') {
+            console.log('Update 1 . 2. 3');
+            console.log($scope.ID);
             var nhanvienEdit = {
                 ID: $scope.ID,
                 HoTen: $scope.HoTen,
@@ -137,6 +148,7 @@
             updateNhanVien(nhanvienEdit);
         }
         else {
+            //console.log('Insert 1 . 2. 3');
             insertNhanVien();
         }
     }

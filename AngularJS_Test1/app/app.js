@@ -1,4 +1,4 @@
-﻿var myApp = angular.module('myApp', ['ui.router']);
+﻿var myApp = angular.module('myApp', ['ui.router','ui.bootstrap']);
 myApp.controller('LoadPageCtr', LoadPageCtr);
 myApp.controller('NhanVienCtr', NhanVienCtr);
 myApp.controller('ErrorCtr', ErrorCtr);
@@ -16,13 +16,16 @@ var configFunction = function ($stateProvider, $httpProvider, $locationProvider,
         .state('home', {
             url: '/home',
             views: {
-                '': { templateUrl: 'app/templates/Info.html' },
-                'viewMenu@home': {
-                    templateUrl: 'app/templates/partial_menu.html'
+                '': {
+                    templateUrl: 'app/templates/partial_info.html',
+                    controller: LoadPageCtr
                 },
-                'viewInfo@home': {
-                    templateUrl: 'app/templates/partial_info.html'
-                }
+                //'viewMenu@home': {
+                //    templateUrl: 'app/templates/partial_menu.html'
+                //},
+                //'viewInfo@home': {
+                //   templateUrl: 'app/templates/partial_info.html'
+                //}
             }
 
         })
@@ -35,7 +38,10 @@ var configFunction = function ($stateProvider, $httpProvider, $locationProvider,
     .state('404', {
         url: '/404',
         views: {
-            '': { templateUrl: 'app/templates/404.html' }
+            '': {
+                templateUrl: 'app/templates/404.html',
+                controller: ErrorCtr
+            }
         }
     })
     .state('nhanvien', {

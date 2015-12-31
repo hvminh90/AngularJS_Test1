@@ -24,7 +24,8 @@ namespace AngularJS_Test1
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/css.css"));
+                      "~/Content/css.css",
+                      "~/Content/bootstrap.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/myApp")
                .IncludeDirectory("~/app/controllers", "*.js")
