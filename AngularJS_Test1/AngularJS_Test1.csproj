@@ -124,7 +124,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\APINhanVienController.cs" />
+    <Compile Include="Controllers\API\NhanVienController.cs" />
+    <Compile Include="Controllers\API\TheLoaiController.cs" />
+    <Compile Include="Controllers\API\TinTucController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -148,17 +150,31 @@
       <DependentUpon>ItemDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TheLoai.cs">
+      <DependentUpon>ItemDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TinTuc.cs">
+      <DependentUpon>ItemDBModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\controllers\ErrorCtr.js" />
+    <Content Include="app\controllers\TheLoaiCtr.js" />
+    <Content Include="app\controllers\TinTucCtr.js" />
     <Content Include="app\factories\Interceptor.js" />
-    <Content Include="app\templates\404.html" />
-    <Content Include="app\templates\About.html" />
-    <Content Include="app\templates\Index.html" />
-    <Content Include="app\templates\Info.html" />
-    <Content Include="app\templates\NhanVien.html" />
-    <Content Include="app\templates\partial_info.html" />
-    <Content Include="app\templates\partial_menu.html" />
+    <Content Include="app\factories\TheLoaiFactory.js" />
+    <Content Include="app\factories\TinTucFactory.js" />
+    <Content Include="app\templates\partial\p_ContentTinTuc.html" />
+    <Content Include="app\templates\partial\p_MenuTinTuc.html" />
+    <Content Include="app\templates\view\test.html" />
+    <Content Include="app\templates\view\v_404.html" />
+    <Content Include="app\templates\view\v_About.html" />
+    <Content Include="app\templates\view\v_Index.html" />
+    <Content Include="app\templates\view\v_Info.html" />
+    <Content Include="app\templates\view\v_NhanVien.html" />
+    <Content Include="app\templates\partial\p_info.html" />
+    <Content Include="app\templates\partial\p_menu.html" />
+    <Content Include="app\templates\view\v_TinTuc.html" />
     <Content Include="Content\Admin\css\bootstrap-theme.css" />
     <Content Include="Content\Admin\css\bootstrap-theme.min.css" />
     <Content Include="Content\Admin\css\bootstrap.css" />

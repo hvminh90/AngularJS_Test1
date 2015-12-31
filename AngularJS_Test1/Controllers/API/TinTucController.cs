@@ -10,45 +10,50 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using AngularJS_Test1;
 
-namespace AngularJS_Test1.Controllers
+namespace AngularJS_Test1.Controllers.API
 {
-    public class APINhanVienController : ApiController
+    public class TinTucController : ApiController
     {
         private ItemDBEntities db = new ItemDBEntities();
 
-        // GET api/APINhanVien
-        public IQueryable<NhanVien> GetNhanViens()
+        // GET api/TinTuc
+        public IQueryable<TinTuc> GetTinTucs()
         {
-            return db.NhanViens;
+            return db.TinTucs;
+        }
+        [Route("api/TinTuc/getTinTuc-{id}")]
+        public IQueryable<TinTuc> GetTinTucByTheLoaiId(long id)
+        {
+            return db.TinTucs.Where(p=>p.TheLoaiId == id);
         }
 
-        // GET api/APINhanVien/5
-        [ResponseType(typeof(NhanVien))]
-        public IHttpActionResult GetNhanVien(long id)
+        // GET api/TinTuc/5
+        [ResponseType(typeof(TinTuc))]
+        public IHttpActionResult GetTinTuc(long id)
         {
-            NhanVien nhanvien = db.NhanViens.Find(id);
-            if (nhanvien == null)
+            TinTuc tintuc = db.TinTucs.Find(id);
+            if (tintuc == null)
             {
                 return NotFound();
             }
 
-            return Ok(nhanvien);
+            return Ok(tintuc);
         }
 
-        // PUT api/APINhanVien/5
-        public IHttpActionResult PutNhanVien(long id, NhanVien nhanvien)
+        // PUT api/TinTuc/5
+        public IHttpActionResult PutTinTuc(long id, TinTuc tintuc)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != nhanvien.ID)
+            if (id != tintuc.TinTucId)
             {
                 return BadRequest();
             }
 
-            db.Entry(nhanvien).State = EntityState.Modified;
+            db.Entry(tintuc).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +61,7 @@ namespace AngularJS_Test1.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!NhanVienExists(id))
+                if (!TinTucExists(id))
                 {
                     return NotFound();
                 }
@@ -69,35 +74,35 @@ namespace AngularJS_Test1.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST api/APINhanVien
-        [ResponseType(typeof(NhanVien))]
-        public IHttpActionResult PostNhanVien(NhanVien nhanvien)
+        // POST api/TinTuc
+        [ResponseType(typeof(TinTuc))]
+        public IHttpActionResult PostTinTuc(TinTuc tintuc)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.NhanViens.Add(nhanvien);
+            db.TinTucs.Add(tintuc);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = nhanvien.ID }, nhanvien);
+            return CreatedAtRoute("DefaultApi", new { id = tintuc.TinTucId }, tintuc);
         }
 
-        // DELETE api/APINhanVien/5
-        [ResponseType(typeof(NhanVien))]
-        public IHttpActionResult DeleteNhanVien(long id)
+        // DELETE api/TinTuc/5
+        [ResponseType(typeof(TinTuc))]
+        public IHttpActionResult DeleteTinTuc(long id)
         {
-            NhanVien nhanvien = db.NhanViens.Find(id);
-            if (nhanvien == null)
+            TinTuc tintuc = db.TinTucs.Find(id);
+            if (tintuc == null)
             {
                 return NotFound();
             }
 
-            db.NhanViens.Remove(nhanvien);
+            db.TinTucs.Remove(tintuc);
             db.SaveChanges();
 
-            return Ok(nhanvien);
+            return Ok(tintuc);
         }
 
         protected override void Dispose(bool disposing)
@@ -109,9 +114,9 @@ namespace AngularJS_Test1.Controllers
             base.Dispose(disposing);
         }
 
-        private bool NhanVienExists(long id)
+        private bool TinTucExists(long id)
         {
-            return db.NhanViens.Count(e => e.ID == id) > 0;
+            return db.TinTucs.Count(e => e.TinTucId == id) > 0;
         }
     }
 }

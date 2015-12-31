@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-    <div class="container" ng-hide="show_error">
+    <div class="container margin-top-10px" ng-hide="show_error">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -41,13 +41,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a ui-sref="about">About <span class="sr-only">(current)</span></a>
+                            <a ui-sref="about" ui-sref-active="active">About <span class="sr-only">(current)</span></a>
                         </li>
                         <li><a ui-sref="nhanvien">Quản lý nhân viên</a></li>
                         <li class="dropdown">
-                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chuyên mục tin <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
+                                <li><a ui-sref="new-nonurl({ id: 3 })">Test Link</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li role="separator" class="divider"></li>
@@ -64,7 +64,7 @@
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Link</a></li>
+                        <li><a ui-sref="tintuc">Tin tức</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -82,9 +82,9 @@
 
     </div>
 
-    <div class="container mainContent" ui-view>
+    <div class="container mainContent">
         
-
+        <ui-view></ui-view>
         
     </div>
 

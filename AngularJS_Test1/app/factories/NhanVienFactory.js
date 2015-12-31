@@ -1,7 +1,7 @@
 ﻿var NhanVienFactory = function ($http) {
 
     var nhanVienFactory = {};
-    var urlBase = 'api/APINhanVien';
+    var urlBase = 'api/NhanVien';
 
     nhanVienFactory.getNhanViens = function () {
         return $http.get(urlBase);
