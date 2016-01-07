@@ -15,6 +15,8 @@
             alert('Lỗi load thể loại....')
         });
     }
+
+
 }
 
 TheLoaiCtr.$inject = ['$scope', 'TheLoaiFactory'];

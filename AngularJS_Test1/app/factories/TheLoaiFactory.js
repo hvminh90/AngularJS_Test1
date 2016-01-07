@@ -4,6 +4,11 @@
 
     theLoaiFactory.getTheLoais = function () {
         return $http.get(urlBase);
+        //return $http({
+        //    url: urlBase,
+        //    method: 'GET',
+        //    dataType:'json'
+        //})
     };
 
     theLoaiFactory.getTheLoai = function (id) {

@@ -5,14 +5,20 @@
                 <ul class="nav" id="side-menu">
 
                     <li ng-repeat="theloai in TheLoais">
-                        <a ui-sref=".theloai({id:theloai.TheLoaiId})" style="cursor:pointer"><i class="fa fa-user  fa-fw"></i> {{theloai.TenTheLoai}}</a>
+                        <a ui-sref="tintuc.theloai({id:theloai.TheLoaiId})" style="cursor:pointer">
+                            <i class="fa fa-user  fa-fw"></i>
+                            {{theloai.TenTheLoai}}
+                        </a>
                     </li>
-                   
+
                 </ul>
             </div>
         </div>
     </div>
-    <div class="col-sm-10" ui-view="v_contentTinTuc">
-        
+    <div class="col-sm-10">
+        <ui-view ="v_contentTinTuc"></ui-view>
     </div>
+    <!--<ui-view>
+
+    </ui-view>-->
 </div>

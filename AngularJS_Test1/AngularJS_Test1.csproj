@@ -165,10 +165,13 @@
     <Content Include="app\factories\TheLoaiFactory.js" />
     <Content Include="app\factories\TinTucFactory.js" />
     <Content Include="app\templates\partial\p_ContentTinTuc.html" />
+    <Content Include="app\templates\partial\p_DetailTinTuc.html" />
     <Content Include="app\templates\partial\p_MenuTinTuc.html" />
     <Content Include="app\templates\view\test.html" />
     <Content Include="app\templates\view\v_404.html" />
     <Content Include="app\templates\view\v_About.html" />
+    <Content Include="app\templates\view\v_contacts.detail.html" />
+    <Content Include="app\templates\view\v_contacts.html" />
     <Content Include="app\templates\view\v_Index.html" />
     <Content Include="app\templates\view\v_Info.html" />
     <Content Include="app\templates\view\v_NhanVien.html" />
@@ -238,6 +241,7 @@
     <Content Include="Content\Admin\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Admin\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\Admin\js\jquery.min.map" />
+    <Content Include="app\templates\view\v_contacts.list.html" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="app\controllers\LoadPageCtr.js" />
     <Content Include="app\controllers\NhanVienCtr.js" />
